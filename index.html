@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M R X | Technologies</title>
+<title>M R X | Technologies & Projects</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
@@ -12,6 +12,7 @@ body{
     background: radial-gradient(circle at top,#1a1a40,#0f0c29);
     color:white;
     overflow-x:hidden;
+    scroll-behavior: smooth;
 }
 
 /* BACKGROUND GLOW */
@@ -19,25 +20,27 @@ body{
     position:fixed;width:100%;height:100%;z-index:-1;
 }
 .circle{
-    position:absolute;border-radius:50%;filter:blur(120px);opacity:0.4;
+    position:absolute;border-radius:50%;filter:blur(140px);opacity:0.35;
 }
-.c1{width:300px;height:300px;background:#00e5ff;top:10%;left:10%;}
-.c2{width:400px;height:400px;background:#8a2be2;bottom:10%;right:10%;}
-.c3{width:250px;height:250px;background:#ff00cc;top:50%;left:40%;}
+.c1{width:350px;height:350px;background:#00e5ff;top:10%;left:10%;}
+.c2{width:450px;height:450px;background:#8a2be2;bottom:10%;right:10%;}
+.c3{width:300px;height:300px;background:#ff00cc;top:50%;left:40%;}
 
 /* NAV */
 nav{
     position:fixed;width:100%;
     padding:18px 30px;
-    backdrop-filter: blur(12px);
-    background:rgba(0,0,0,0.3);
-    display:flex;justify-content:space-between;
+    backdrop-filter: blur(15px);
+    background:rgba(15, 12, 41, 0.75);
+    display:flex;justify-content:space-between;align-items:center;
     z-index:1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.logo{font-size:28px;color:#00e5ff;font-weight:bold;}
+.logo{font-size:28px;color:#00e5ff;font-weight:bold;letter-spacing: 1px;}
 
-nav a{color:white;margin-left:20px;text-decoration:none;}
+nav div a{color:white;margin-left:25px;text-decoration:none;font-weight: 500;transition:0.3s;}
+nav div a:hover{color:#00e5ff;}
 
 /* HERO */
 .hero{
@@ -48,98 +51,136 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
 }
 
 .hero h1{
-    font-size:60px;
-    background:linear-gradient(90deg,#00e5ff,#8a2be2);
+    font-size:62px;
+    background:linear-gradient(90deg,#00e5ff,#8a2be2,#ff00cc);
     -webkit-background-clip:text;
     color:transparent;
+    margin-bottom: 15px;
 }
 
 .hero p{
     max-width:700px;
-    font-size:20px;margin-top:15px;
+    font-size:20px;
+    opacity: 0.85;
 }
 
 /* BUTTON */
 .btn{
     margin-top:25px;
-    padding:14px 30px;
+    padding:14px 32px;
     border:2px solid #00e5ff;
     border-radius:35px;
     background:transparent;
     color:white;
     cursor:pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
     transition:0.3s;
 }
 
 .btn:hover{
-    background:#00e5ff;color:black;
-    transform:scale(1.08);
+    background:#00e5ff;color:#0f0c29;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    transform:scale(1.05);
 }
 
 /* SECTION */
 section{padding:100px 20px;max-width:1200px;margin:auto;}
-.title{text-align:center;font-size:38px;margin-bottom:50px;}
+.title{text-align:center;font-size:38px;margin-bottom:15px;font-weight: 700;}
 
 /* TAGLINE */
 .tagline{
     text-align:center;
     font-size:18px;
     opacity:0.7;
-    margin-top:-30px;
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
 /* SKILLS */
 .skills{
     display:flex;flex-wrap:wrap;
-    justify-content:center;gap:12px;
+    justify-content:center;gap:14px;
 }
 .skill{
-    padding:10px 18px;
-    border:1px solid #00e5ff;
-    border-radius:20px;
-    font-size:14px;
+    padding:12px 22px;
+    border:1px solid rgba(0, 229, 255, 0.4);
+    background: rgba(0, 229, 255, 0.05);
+    border-radius:25px;
+    font-size:15px;
+    transition: 0.3s;
+}
+.skill:hover{
+    background: rgba(0, 229, 255, 0.15);
+    border-color: #00e5ff;
+    transform: translateY(-3px);
 }
 
 /* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:30px;
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
     border-radius:25px;
-    padding:25px;
+    padding:30px;
     backdrop-filter:blur(20px);
     transition:0.4s;
     position:relative;
+    overflow: hidden;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.04);
+    transform:translateY(-8px);
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card h3{
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #00e5ff;
+}
+
+.card p{
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 .badge{
     position:absolute;
-    top:15px;
-    right:15px;
+    top:20px;
+    right:20px;
     font-size:12px;
-    padding:4px 10px;
-    border-radius:12px;
+    padding:5px 12px;
+    border-radius:15px;
     background:#00e5ff;
-    color:black;
+    color:#0f0c29;
+    font-weight: 700;
 }
+
+.badge.dev{ background: #ffa500; color: #000; }
+.badge.future{ background: #ff00cc; color: #fff; }
 
 /* STATS */
 .stats{
     display:flex;justify-content:space-around;
     flex-wrap:wrap;text-align:center;
+    gap: 30px;
 }
 .stat h2{
-    font-size:45px;color:#00e5ff;
+    font-size:50px;color:#00e5ff;font-weight: 700;
+}
+.stat p{
+    opacity: 0.8;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 /* ABOUT */
@@ -148,16 +189,18 @@ section{padding:100px 20px;max-width:1200px;margin:auto;}
     max-width:850px;
     margin:auto;
     line-height:1.9;
+    font-size: 18px;
+    opacity: 0.9;
 }
 
 /* CONTACT */
 .contact{text-align:center;}
 
 /* FOOTER */
-footer{text-align:center;padding:30px;opacity:0.7;}
+footer{text-align:center;padding:40px;opacity:0.7;border-top:1px solid rgba(255,255,255,0.08);}
 
 @media(max-width:600px){
-.hero h1{font-size:36px;}
+.hero h1{font-size:38px;}
 .hero p{font-size:16px;}
 }
 </style>
@@ -174,6 +217,7 @@ footer{text-align:center;padding:30px;opacity:0.7;}
 <nav>
 <div class="logo">M R X</div>
 <div>
+<a href="#about">About</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
@@ -182,82 +226,93 @@ footer{text-align:center;padding:30px;opacity:0.7;}
 <!-- HERO -->
 <section class="hero">
 <h1>M R X Technologies</h1>
-<p>Building premium Android apps and modern learning experiences.</p>
-<button class="btn" onclick="scrollToSection('projects')">Explore</button>
+<p>Building high-performance Android apps, modern web utilities, and seamless user experiences.</p>
+<button class="btn" onclick="scrollToSection('projects')">Explore Projects</button>
 </section>
 
 <!-- ABOUT -->
-<section>
+<section id="about">
 <h2 class="title">👨‍💻 About Developer</h2>
 <p class="about">
-Focused on creating modern Android apps with smooth UI and engaging experience.
-Building educational apps, quiz platforms, and interactive systems.
+Dedicated Android application developer specializing in Kotlin, MVVM architecture, and WebView optimizations. 
+Focused on crafting custom utility tools, educational apps, and innovative browsing solutions with clean UI design.
 </p>
 </section>
 
 <!-- SKILLS -->
 <section>
 <h2 class="title">🛠 Tech Stack</h2>
-<p class="tagline">Technologies I use to build powerful apps</p>
+<p class="tagline">Core technologies powering modern application development</p>
 
 <div class="skills">
-<div class="skill">Android</div>
-<div class="skill">Java</div>
+<div class="skill">Android Studio</div>
 <div class="skill">Kotlin</div>
+<div class="skill">Java</div>
+<div class="skill">MVVM Architecture</div>
+<div class="skill">WebView & WebKit</div>
 <div class="skill">Firebase</div>
-<div class="skill">AdMob</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
+<div class="skill">Google AdMob</div>
+<div class="skill">HTML / CSS / JS</div>
 </div>
 </section>
 
 <!-- WHAT I BUILD -->
 <section>
 <h2 class="title">🚀 What I Build</h2>
+<p class="tagline">Engineering robust solutions for mobile and web ecosystems</p>
 
 <div class="cards">
-<div class="card"><h3>📱 Android Apps</h3><p>Modern and smooth mobile applications.</p></div>
-<div class="card"><h3>🎮 Interactive Systems</h3><p>Engaging user experiences and game logic.</p></div>
-<div class="card"><h3>📚 Learning Platforms</h3><p>Educational apps with smart UI and features.</p></div>
+<div class="card">
+<h3>📱 Lightweight Browsers</h3>
+<p>Custom secure browser engines built with advanced WebView features and smart assistant tools.</p>
+</div>
+<div class="card">
+<h3>⚡ Native Android Apps</h3>
+<p>Optimized mobile applications utilizing modern architecture components and responsive layouts.</p>
+</div>
+<div class="card">
+<h3>📚 Interactive Platforms</h3>
+<p>Dynamic educational utilities and rich media handling interfaces built for seamless engagement.</p>
+</div>
 </div>
 </section>
 
 <!-- STATS -->
 <section>
 <h2 class="title">📊 Highlights</h2>
+<p class="tagline">Key project milestones and deployment records</p>
 
 <div class="stats">
-<div class="stat"><h2 id="a1">0</h2><p>Apps Built</p></div>
-<div class="stat"><h2 id="a2">0</h2><p>Features</p></div>
-<div class="stat"><h2 id="a3">0</h2><p>Updates</p></div>
+<div class="stat"><h2 id="a1">0</h2><p>Published & Active Apps</p></div>
+<div class="stat"><h2 id="a2">0</h2><p>Core Modules & Features</p></div>
+<div class="stat"><h2 id="a3">0</h2><p>Major App Updates</p></div>
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2 class="title">🚀 Projects</h2>
-<p class="tagline">Real apps and upcoming ideas</p>
+<h2 class="title">🚀 Featured Projects</h2>
+<p class="tagline">Explore live products and upcoming innovations</p>
 
 <div class="cards">
 
-<div class="card" onclick="location.href='mrx_quize.html'">
+<div class="card">
+<div class="badge dev">Active Dev</div>
+<h3>MRX Browser</h3>
+<p>A fast, lightweight Android browser built with Kotlin/MVVM and custom WebView integration featuring smart tools.</p>
+</div>
+
+<div class="card">
 <div class="badge">Live</div>
 <h3>MRX Quize</h3>
-<p>Subject-wise quiz app with Hindi & English support.</p>
-<button class="btn">View</button>
+<p>Feature-rich educational trivia application with multiplayer battles, NCERT content, and streak rewards.</p>
+<button class="btn" style="margin-top:10px; padding:8px 20px; font-size:14px;" onclick="alert('MRX Quize is live on Play Console!')">View App</button>
 </div>
 
 <div class="card">
-<div class="badge">Coming</div>
+<div class="badge future">Upcoming</div>
 <h3>English Grammar</h3>
-<p>Advanced grammar learning app (under development).</p>
-</div>
-
-<div class="card">
-<div class="badge">Future</div>
-<h3>Next App</h3>
-<p>New powerful concept coming soon.</p>
+<p>Comprehensive English learning tool featuring structured tenses, rapid practice tests, and daily streak tracking.</p>
 </div>
 
 </div>
@@ -265,8 +320,8 @@ Building educational apps, quiz platforms, and interactive systems.
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2 class="title">📞 Contact</h2>
-<p class="tagline">Let’s build something great</p>
+<h2 class="title">📞 Get In Touch</h2>
+<p class="tagline">Let’s collaborate or build something extraordinary together</p>
 
 <a href="https://mail.google.com/mail/?view=cm&to=mrxofficial000000@email.com" class="btn">
     Send Email
@@ -274,7 +329,7 @@ Building educational apps, quiz platforms, and interactive systems.
 </section>
 
 <footer>
-© 2026 M R X
+© 2026 M R X Technologies. All rights reserved.
 </footer>
 
 <script>
@@ -287,13 +342,13 @@ let i=0,el=document.getElementById(id);
 let int=setInterval(()=>{
 i++;el.innerText=i+"+";
 if(i>=end) clearInterval(int);
-},40);
+},50);
 }
 
 window.onload=()=>{
-counter("a1",2);
-counter("a2",25);
-counter("a3",10);
+counter("a1",3);
+counter("a2",30);
+counter("a3",12);
 }
 </script>
 
