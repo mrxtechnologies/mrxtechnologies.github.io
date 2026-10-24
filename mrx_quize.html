@@ -1,259 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MRX Quize</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,sans-serif;
-}
-
-body{
-    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* REMOVE ALL UNDERLINES */
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    padding:18px 30px;
-    background:rgba(0,0,0,0.25);
-    backdrop-filter: blur(12px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#00e5ff;
-    letter-spacing:2px;
-}
-
-/* HERO */
-.hero{
-    min-height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    text-align:center;
-    padding:100px 20px 40px;
-}
-
-.hero h1{
-    font-size:52px;
-    margin-bottom:15px;
-    animation:slideDown 1s ease;
-}
-
-.hero p{
-    font-size:20px;
-    max-width:750px;
-    line-height:1.8;
-    opacity:0.9;
-}
-
-/* BUTTON */
-.btn{
-    margin-top:20px;
-    padding:14px 30px;
-    border:2px solid #00e5ff;
-    border-radius:35px;
-    background:transparent;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-    display:inline-block;
-}
-
-.btn:hover{
-    background:#00e5ff;
-    color:black;
-    transform:scale(1.06);
-    box-shadow:0 0 15px #00e5ff;
-}
-
-.btn:active{
-    transform:scale(0.95);
-}
-
-/* SECTION */
-section{
-    padding:90px 20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
-}
-
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:25px;
-    padding:25px;
-    backdrop-filter:blur(15px);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.03);
-}
-
-/* DOWNLOAD BOX */
-.download-box{
-    text-align:center;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:25px;
-    padding:40px;
-    backdrop-filter:blur(15px);
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.7;
-}
-
-/* ANIMATION */
-@keyframes slideDown{
-    from{opacity:0;transform:translateY(-40px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* MOBILE */
-@media(max-width:600px){
-    .hero h1{
-        font-size:34px;
-    }
-    .hero p{
-        font-size:16px;
-    }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="Explore MRX Quize: 10,000+ quiz questions, daily challenges, quick practice, mock tests, rewards, and Hindi-English support.">
+  <title>MRX Quize — Play. Learn. Grow.</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b16;--panel:#101626;--panel2:#141c30;--text:#f6f7ff;--muted:#aab4ca;--line:rgba(201,216,255,.13);--cyan:#70f2ed;--violet:#9c86ff;--pink:#e783ff;--gold:#ffc875;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 11% 8%,rgba(32,188,191,.19),transparent 34%),radial-gradient(ellipse at 89% 35%,rgba(125,86,222,.2),transparent 36%),linear-gradient(180deg,#0a0e1b,#080b16 75%)}
+    body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.17;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin-inline:auto}.site-header{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:rgba(8,11,22,.79);backdrop-filter:blur(18px)}.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:inline-flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.08em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(140deg,var(--cyan),#8eb9ff 64%,var(--violet));color:#071316;font-size:12px;letter-spacing:-.04em;box-shadow:0 0 23px rgba(112,242,237,.2);animation:brandGlow 3s ease-in-out infinite alternate}.brand-copy{font-size:13px}.brand-copy span{display:block;color:#94a0b6;font-size:9px;letter-spacing:.17em}.nav-links{display:flex;align-items:center;gap:25px;color:#c2c9d8;font-size:13px}.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--cyan)}.nav-download{padding:9px 14px;border:1px solid rgba(112,242,237,.34);border-radius:999px;color:var(--cyan)!important}
+    .hero{min-height:690px;min-height:min(800px,calc(100svh - 74px));display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:54px;padding-block:74px 88px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 13px var(--cyan);animation:pulse 1.7s ease-in-out infinite}h1,h2,h3,p{margin-top:0}.hero h1{max-width:680px;margin:20px 0 18px;font-size:clamp(48px,6.8vw,82px);line-height:.99;letter-spacing:-.07em}.gradient{background:linear-gradient(105deg,var(--cyan),#a8a0ff 62%,var(--pink));background-size:180% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradientFlow 6s ease-in-out infinite alternate}.hero-copy{max-width:580px;color:#b9c2d5;font-size:17px;line-height:1.85}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.btn{position:relative;isolation:isolate;overflow:hidden;min-height:49px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(112,242,237,.33);border-radius:14px;color:var(--text);font-size:13px;font-weight:750;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}.btn:after{content:"";position:absolute;z-index:-1;inset:-70% auto -70% -45%;width:28%;transform:rotate(20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .65s ease}.btn:hover:after{left:125%}.btn:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 12px 35px rgba(0,0,0,.22)}.btn-primary{color:#071316;background:linear-gradient(110deg,var(--cyan),#a6e9ff);border-color:transparent;box-shadow:0 10px 30px rgba(112,242,237,.13)}.btn-primary:hover{color:#071316;background:linear-gradient(110deg,#b0fff3,#c8e7ff)}.btn-arrow{font-size:17px;transition:transform .2s}.btn:hover .btn-arrow{transform:translate(3px,-2px)}
+    .showcase{position:relative;isolation:isolate;max-width:510px;width:100%;justify-self:end;padding:25px;border:1px solid rgba(187,207,255,.19);border-radius:29px;background:linear-gradient(145deg,rgba(24,34,56,.96),rgba(12,17,31,.97));box-shadow:0 30px 100px rgba(0,0,0,.36);animation:float 6s ease-in-out infinite;overflow:hidden}.showcase:before{content:"";position:absolute;z-index:-1;width:300px;height:300px;right:-130px;top:-140px;border-radius:50%;background:rgba(112,242,237,.14);filter:blur(24px)}.showcase:after{content:"";position:absolute;z-index:-1;width:240px;height:240px;left:-130px;bottom:-160px;border-radius:50%;background:rgba(156,134,255,.13);filter:blur(20px)}.showcase-top{display:flex;align-items:center;justify-content:space-between;gap:14px;color:#9eabc3;font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}.preview-pill{padding:6px 10px;border-radius:999px;color:var(--cyan);background:rgba(112,242,237,.1);letter-spacing:.06em}.phone{max-width:340px;margin:27px auto 10px;padding:15px;border:1px solid rgba(210,224,255,.16);border-radius:24px;background:linear-gradient(150deg,#111a2c,#0b101c);box-shadow:inset 0 1px rgba(255,255,255,.07),0 18px 45px rgba(0,0,0,.28)}.phone-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;color:#ccd4e4;font-size:10px}.mini-brand{display:flex;align-items:center;gap:7px;font-weight:800;letter-spacing:.07em}.mini-icon{width:22px;height:22px;display:grid;place-items:center;border-radius:8px;color:#071316;background:linear-gradient(135deg,var(--cyan),var(--violet));font-size:9px}.coin{padding:4px 8px;border:1px solid rgba(255,200,117,.22);border-radius:999px;color:var(--gold);background:rgba(255,200,117,.07)}.daily-card{padding:16px;border:1px solid rgba(112,242,237,.19);border-radius:17px;background:radial-gradient(ellipse at 95% 0%,rgba(112,242,237,.14),transparent 50%),rgba(255,255,255,.035)}.daily-label{color:var(--cyan);font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.daily-card h3{font-size:17px;line-height:1.35;margin:7px 0 13px}.question-meta{display:flex;justify-content:space-between;color:#93a0b7;font-size:9px}.progress{height:5px;margin:8px 0 13px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}.progress span{display:block;width:42%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--cyan),var(--violet));animation:progressGrow 1.2s ease both}.answer{margin-top:8px;padding:8px 10px;border:1px solid rgba(210,224,255,.1);border-radius:10px;color:#c6cfe0;background:rgba(255,255,255,.025);font-size:10px;transition:background .2s,border-color .2s}.answer.correct{border-color:rgba(112,242,237,.3);color:var(--cyan);background:rgba(112,242,237,.07)}.mode-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mode{padding:10px 6px;border:1px solid rgba(210,224,255,.1);border-radius:12px;background:rgba(255,255,255,.03);text-align:center;color:#bcc7dc;font-size:9px}.mode b{display:block;margin-bottom:3px;color:var(--text);font-size:12px}.preview-note{margin:10px 0 0;text-align:center;color:#78859c;font-size:9px}.showcase-caption{display:flex;justify-content:space-between;gap:14px;margin-top:19px;padding-top:16px;border-top:1px solid var(--line);color:#98a5bb;font-size:10px}.store-proof{display:flex;align-items:center;gap:7px;color:#d9e0ef}.store-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px var(--cyan)}
+    .stats-bar{border-block:1px solid var(--line);background:rgba(255,255,255,.018)}.stats{display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0}.stat{text-align:center;padding:7px 14px}.stat+.stat{border-left:1px solid var(--line)}.stat strong{display:block;font-size:26px;letter-spacing:-.05em}.stat span{color:var(--muted);font-size:11px}
+    section.content{padding-block:100px}.section-head{max-width:680px;margin:0 auto 40px;text-align:center}.section-kicker{color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.section-head h2{margin:10px 0 12px;font-size:clamp(31px,4.5vw,48px);line-height:1.08;letter-spacing:-.055em}.section-head p{margin:0;color:var(--muted)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{position:relative;min-height:220px;padding:24px;border:1px solid var(--line);border-radius:21px;background:linear-gradient(145deg,rgba(22,30,48,.89),rgba(12,17,31,.93));transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;overflow:hidden}.feature:after{content:"";position:absolute;right:-50px;bottom:-75px;width:150px;height:150px;border-radius:50%;background:rgba(112,242,237,.06);filter:blur(22px);transition:transform .35s ease}.feature:hover{transform:translateY(-6px);border-color:rgba(112,242,237,.36);box-shadow:0 18px 48px rgba(0,0,0,.22)}.feature:hover:after{transform:scale(1.5)}.feature-icon{width:42px;height:42px;display:grid;place-items:center;margin-bottom:18px;border-radius:14px;background:rgba(112,242,237,.1);font-size:19px;transition:transform .25s ease,background .25s ease}.feature:hover .feature-icon{transform:rotate(-8deg) scale(1.08);background:rgba(112,242,237,.18)}.feature h3{margin-bottom:8px;font-size:17px;letter-spacing:-.025em}.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}.categories{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.category{padding:10px 14px;border:1px solid rgba(150,170,215,.17);border-radius:999px;background:rgba(255,255,255,.03);color:#d7deec;font-size:12px;transition:transform .2s ease,border-color .2s ease,background .2s ease}.category:hover{transform:translateY(-3px);border-color:rgba(112,242,237,.4);background:rgba(112,242,237,.07)}.disclaimer{max-width:760px;margin:26px auto 0;text-align:center;color:#8996ad;font-size:11px;line-height:1.7}
+    .download-panel{position:relative;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:35px;border:1px solid rgba(112,242,237,.23);border-radius:25px;background:radial-gradient(ellipse at 9% 22%,rgba(112,242,237,.12),transparent 42%),linear-gradient(130deg,rgba(23,31,50,.96),rgba(13,18,32,.96));overflow:hidden}.download-panel h2{margin:8px 0;font-size:clamp(25px,4vw,38px);letter-spacing:-.05em}.download-panel p{margin:0;color:var(--muted)}.download-actions{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0}.home-link{display:inline-flex;margin-top:24px;color:var(--cyan);font-size:13px;font-weight:750}.home-link:hover{color:#fff}footer{margin-top:65px;border-top:1px solid var(--line);padding:27px 0;color:#8693a9;font-size:11px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:18px}.footer-brand{color:#e0e6f3;font-weight:800;letter-spacing:.09em}.footer-links{display:flex;gap:17px}.footer-links a:hover{color:var(--cyan)}a:focus-visible{outline:3px solid var(--cyan);outline-offset:4px;border-radius:5px}
+    .motion-ready [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--delay,0ms)}.motion-ready [data-reveal].visible{opacity:1;transform:translateY(0)}@keyframes brandGlow{from{box-shadow:0 0 13px rgba(112,242,237,.12)}to{box-shadow:0 0 29px rgba(112,242,237,.42)}}@keyframes pulse{0%,100%{transform:scale(.88);box-shadow:0 0 5px var(--cyan)}50%{transform:scale(1.18);box-shadow:0 0 17px var(--cyan)}}@keyframes gradientFlow{from{background-position:0% 50%}to{background-position:100% 50%}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes progressGrow{from{width:0}to{width:42%}}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:35px;min-height:auto;padding-block:80px}.showcase{justify-self:center}.features{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.wrap{width:calc(100% - 32px)}.nav{min-height:66px}.brand-mark{width:34px;height:34px}.brand-copy{font-size:11px}.nav-links{gap:12px;font-size:11px}.nav-links>a:first-child{display:none}.nav-download{padding:8px 10px}.hero{padding-block:70px 60px}.hero h1{font-size:clamp(43px,12vw,62px)}.hero-copy{font-size:15px}.showcase{padding:18px;border-radius:23px}.phone{padding:12px}.stats{padding:15px 0}.stat{padding:6px}.stat strong{font-size:22px}.stat span{font-size:9px}.content{padding-block:75px!important}.section-head{margin-bottom:28px}.features{grid-template-columns:1fr}.feature{min-height:180px}.download-panel{align-items:flex-start;flex-direction:column;padding:25px}.download-actions{width:100%}.download-actions .btn{flex:1}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.motion-ready [data-reveal]{opacity:1;transform:none}}
+  </style>
 </head>
-
 <body>
-
-<nav>
-    <div class="logo">M R X</div>
-    <div>
-        <a href="index.html">Home</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-    <h1>🚀 MRX Quize</h1>
-    <p>
-        A modern Android quiz application designed to deliver a smooth,
-        engaging and interactive learning experience.
-    </p>
-
-    <button class="btn" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
-        Explore Features
-    </button>
-</div>
-
-<!-- FEATURES -->
-<section id="features">
-    <h2 class="section-title">🔥 Core Features</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>📚 Quiz System</h3>
-            <p>Interactive quizzes with smooth navigation.</p>
-        </div>
-
-        <div class="card">
-            <h3>🌐 Multi Language</h3>
-            <p>Hindi & English support.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎯 Subject Wise</h3>
-            <p>Multiple subjects up to class 12.</p>
-        </div>
-
-        <div class="card">
-            <h3>⚡ Fast & Smooth</h3>
-            <p>Optimized performance.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎨 Premium UI</h3>
-            <p>Modern glass design.</p>
-        </div>
-
-        <div class="card">
-            <h3>💰 AdMob</h3>
-            <p>Smart monetization.</p>
-        </div>
-    </div>
-</section>
-
-<!-- DOWNLOAD + POLICY -->
-<section>
-    <div class="download-box">
-        <h2>📥 Download MRX Quize</h2>
-        <p>Install the app and start learning with fun quizzes.</p>
-
-        <a href="https://play.google.com/store/apps/details?id=com.mrx.quize" class="btn">
-            🚀 Download Now
-        </a>
-
-        <br>
-
-        <a href="https://nileshchouhan143.github.io/mrx_quize_policy/" class="btn">
-            🔒 Privacy Policy
-        </a>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section>
-    <h2 class="section-title">📖 About This App</h2>
-
-    <p style="text-align:center; max-width:850px; margin:auto; line-height:1.9;">
-        MRX Quize is a complete learning platform with modern UI and smart learning experience.
-    </p>
-
-    <div style="text-align:center; margin-top:20px;">
-        <a href="index.html" class="btn">← Back to Home</a>
-    </div>
-</section>
-
-<footer>
-    © 2026 M R X
-</footer>
-
+  <header class="site-header"><nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="./index.html" aria-label="MRX Technologies home"><span class="brand-mark">MRX</span><span class="brand-copy">MRX QUIZE<span>BY MRX TECHNOLOGIES</span></span></a><div class="nav-links"><a href="#features">Features</a><a href="#categories">Categories</a><a class="nav-download" href="https://play.google.com/store/apps/details?id=com.mrx.quize" target="_blank" rel="noopener noreferrer">Get the app ↗</a></div></nav></header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy-wrap"><span class="eyebrow">Play · Learn · Grow</span><h1 id="hero-title">A little more curious. <span class="gradient">A lot more knowledgeable.</span></h1><p class="hero-copy">Turn spare moments into quiz time. Explore 10,000+ questions across trivia, school subjects, technology, and more—with daily challenges, quick practice, and full mock tests.</p><div class="actions"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mrx.quize" target="_blank" rel="noopener noreferrer">Get MRX Quize on Google Play <span class="btn-arrow" aria-hidden="true">↗</span></a><a class="btn" href="#features">Explore the experience <span class="btn-arrow" aria-hidden="true">↓</span></a></div></div>
+      <div class="showcase" aria-label="Illustrative preview of a daily quiz"><div class="showcase-top"><span>MRX Quize · Feature preview</span><span class="preview-pill">Daily challenge</span></div><div class="phone"><div class="phone-head"><span class="mini-brand"><span class="mini-icon">Q</span> MRX QUIZE</span><span class="coin">✦ 240 coins</span></div><div class="daily-card"><div class="daily-label">Sample question · General Knowledge</div><h3>Which planet is known as the Red Planet?</h3><div class="question-meta"><span>Question 4 of 10</span><span>00:18</span></div><div class="progress"><span></span></div><div class="answer">A&nbsp;&nbsp; Venus</div><div class="answer correct">B&nbsp;&nbsp; Mars &nbsp;✓</div><div class="answer">C&nbsp;&nbsp; Jupiter</div><div class="answer">D&nbsp;&nbsp; Mercury</div></div><div class="mode-strip"><div class="mode"><b>☀️ Daily</b>Challenge</div><div class="mode"><b>⚡ Quick</b>Practice</div><div class="mode"><b>📝 Mock</b>Tests</div></div><p class="preview-note">Illustrative preview — not an in-app screenshot</p></div><div class="showcase-caption"><span class="store-proof"><i class="store-dot"></i>Available on Google Play</span><span>Hindi · English</span></div></div>
+    </section>
+    <div class="stats-bar"><div class="stats wrap"><div class="stat"><strong>10,000+</strong><span>Quiz questions</span></div><div class="stat"><strong>Daily</strong><span>Fresh challenges</span></div><div class="stat"><strong>Hindi + English</strong><span>Language support</span></div></div></div>
+    <section class="content wrap" id="features"><div class="section-head"><span class="section-kicker">Your next question is waiting</span><h2>More than just a quiz.</h2><p>Pick a quick round, take a full test, or come back tomorrow to keep your streak going.</p></div><div class="features"><article class="feature"><div class="feature-icon" aria-hidden="true">📅</div><h3>Daily Quiz</h3><p>Take on a fresh daily challenge and test what you know a little at a time.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true">⚡</div><h3>Quick Practice</h3><p>Jump into fast-paced rounds whenever you have a few minutes to spare.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true">📝</div><h3>Full Mock Tests</h3><p>Work through comprehensive quiz sets for focused self-assessment.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true">🔥</div><h3>Streaks & achievements</h3><p>Build a daily learning habit and unlock milestones as you progress.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true">🎡</div><h3>Coins & daily rewards</h3><p>Collect virtual coins and enjoy daily login bonuses and the spin wheel.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true">🏆</div><h3>Leaderboard</h3><p>See how your quiz scores compare with players on the leaderboard.</p></article></div></section>
+    <section class="content wrap" id="categories"><div class="section-head"><span class="section-kicker">Find your topic</span><h2>Curiosity has no one category.</h2><p>Browse a mix of general trivia, school-level practice, language, and technology topics.</p></div><div class="categories"><span class="category">General Knowledge</span><span class="category">Science & Mathematics</span><span class="category">History & Geography</span><span class="category">Computer & Technology</span><span class="category">Hindi & English</span><span class="category">Class 10 quizzes</span><span class="category">IT & Programming</span><span class="category">And more</span></div><p class="disclaimer">Coins in MRX Quize are virtual rewards for entertainment only. They have no real-world monetary value and cannot be exchanged for cash.</p></section>
+    <section class="content wrap"><div class="download-panel"><div><span class="section-kicker">Ready when you are</span><h2>Make your next break a brain break.</h2><p>Download MRX Quize and start with a daily challenge.</p></div><div class="download-actions"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mrx.quize" target="_blank" rel="noopener noreferrer">Download on Google Play <span class="btn-arrow" aria-hidden="true">↗</span></a><a class="btn" href="https://mrxtechnologies.github.io/mrx_quize_policy/" target="_blank" rel="noopener noreferrer">Privacy policy</a></div></div><div style="text-align:center"><a class="home-link" href="./index.html">← Back to MRX Technologies</a></div></section>
+  </main>
+  <footer><div class="footer-inner wrap"><span class="footer-brand">MRX TECHNOLOGIES</span><div class="footer-links"><a href="mailto:mrxofficial000000@gmail.com">Support</a><a href="https://mrxtechnologies.github.io/mrx_quize_policy/" target="_blank" rel="noopener noreferrer">Privacy</a></div><span>© 2026 MRX Technologies</span></div></footer>
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("motion-ready");
+      const revealItems = document.querySelectorAll(".hero-copy-wrap, .showcase, .stat, .section-head, .feature, .category, .download-panel");
+      revealItems.forEach((item, index) => {
+        item.dataset.reveal = "";
+        item.style.setProperty("--delay", String((index % 3) * 90) + "ms");
+      });
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
 </body>
 </html>
