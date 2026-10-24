@@ -1,356 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M R X | Technologies & Projects</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
-
-body{
-    background: radial-gradient(circle at top,#1a1a40,#0f0c29);
-    color:white;
-    overflow-x:hidden;
-    scroll-behavior: smooth;
-}
-
-/* BACKGROUND GLOW */
-.bg{
-    position:fixed;width:100%;height:100%;z-index:-1;
-}
-.circle{
-    position:absolute;border-radius:50%;filter:blur(140px);opacity:0.35;
-}
-.c1{width:350px;height:350px;background:#00e5ff;top:10%;left:10%;}
-.c2{width:450px;height:450px;background:#8a2be2;bottom:10%;right:10%;}
-.c3{width:300px;height:300px;background:#ff00cc;top:50%;left:40%;}
-
-/* NAV */
-nav{
-    position:fixed;width:100%;
-    padding:18px 30px;
-    backdrop-filter: blur(15px);
-    background:rgba(15, 12, 41, 0.75);
-    display:flex;justify-content:space-between;align-items:center;
-    z-index:1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.logo{font-size:28px;color:#00e5ff;font-weight:bold;letter-spacing: 1px;}
-
-nav div a{color:white;margin-left:25px;text-decoration:none;font-weight: 500;transition:0.3s;}
-nav div a:hover{color:#00e5ff;}
-
-/* HERO */
-.hero{
-    height:100vh;display:flex;
-    flex-direction:column;
-    justify-content:center;align-items:center;
-    text-align:center;padding:20px;
-}
-
-.hero h1{
-    font-size:62px;
-    background:linear-gradient(90deg,#00e5ff,#8a2be2,#ff00cc);
-    -webkit-background-clip:text;
-    color:transparent;
-    margin-bottom: 15px;
-}
-
-.hero p{
-    max-width:700px;
-    font-size:20px;
-    opacity: 0.85;
-}
-
-/* BUTTON */
-.btn{
-    margin-top:25px;
-    padding:14px 32px;
-    border:2px solid #00e5ff;
-    border-radius:35px;
-    background:transparent;
-    color:white;
-    cursor:pointer;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#00e5ff;color:#0f0c29;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
-    transform:scale(1.05);
-}
-
-/* SECTION */
-section{padding:100px 20px;max-width:1200px;margin:auto;}
-.title{text-align:center;font-size:38px;margin-bottom:15px;font-weight: 700;}
-
-/* TAGLINE */
-.tagline{
-    text-align:center;
-    font-size:18px;
-    opacity:0.7;
-    margin-bottom:50px;
-}
-
-/* SKILLS */
-.skills{
-    display:flex;flex-wrap:wrap;
-    justify-content:center;gap:14px;
-}
-.skill{
-    padding:12px 22px;
-    border:1px solid rgba(0, 229, 255, 0.4);
-    background: rgba(0, 229, 255, 0.05);
-    border-radius:25px;
-    font-size:15px;
-    transition: 0.3s;
-}
-.skill:hover{
-    background: rgba(0, 229, 255, 0.15);
-    border-color: #00e5ff;
-    transform: translateY(-3px);
-}
-
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:25px;
-    padding:30px;
-    backdrop-filter:blur(20px);
-    transition:0.4s;
-    position:relative;
-    overflow: hidden;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color: rgba(0, 229, 255, 0.5);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.card h3{
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: #00e5ff;
-}
-
-.card p{
-    opacity: 0.8;
-    line-height: 1.6;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-.badge{
-    position:absolute;
-    top:20px;
-    right:20px;
-    font-size:12px;
-    padding:5px 12px;
-    border-radius:15px;
-    background:#00e5ff;
-    color:#0f0c29;
-    font-weight: 700;
-}
-
-.badge.dev{ background: #ffa500; color: #000; }
-.badge.future{ background: #ff00cc; color: #fff; }
-
-/* STATS */
-.stats{
-    display:flex;justify-content:space-around;
-    flex-wrap:wrap;text-align:center;
-    gap: 30px;
-}
-.stat h2{
-    font-size:50px;color:#00e5ff;font-weight: 700;
-}
-.stat p{
-    opacity: 0.8;
-    font-size: 16px;
-    margin-top: 5px;
-}
-
-/* ABOUT */
-.about{
-    text-align:center;
-    max-width:850px;
-    margin:auto;
-    line-height:1.9;
-    font-size: 18px;
-    opacity: 0.9;
-}
-
-/* CONTACT */
-.contact{text-align:center;}
-
-/* FOOTER */
-footer{text-align:center;padding:40px;opacity:0.7;border-top:1px solid rgba(255,255,255,0.08);}
-
-@media(max-width:600px){
-.hero h1{font-size:38px;}
-.hero p{font-size:16px;}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="MRX Technologies builds Android apps, modern web utilities, and smooth digital experiences.">
+  <title>MRX Technologies — Apps & Digital Experiences</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080b16;--panel:#101626;--text:#f5f7ff;--muted:#aab4ca;--line:rgba(201,216,255,.12);--cyan:#70f2ed;--violet:#9c86ff;--pink:#e783ff;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 12% 12%,rgba(31,168,190,.16),transparent 34%),radial-gradient(ellipse at 87% 44%,rgba(127,83,218,.16),transparent 36%),linear-gradient(180deg,#0a0e1b,#080b16 72%)}
+    body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin-inline:auto}.site-header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(8,11,22,.78);backdrop-filter:blur(18px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.09em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;color:#071316;background:linear-gradient(135deg,var(--cyan),#8eb9ff);box-shadow:0 0 28px rgba(112,242,237,.18);font-size:15px;letter-spacing:0}.brand-name{font-size:14px}.brand-name span{color:var(--muted);font-weight:500;letter-spacing:.02em}.nav-links{display:flex;align-items:center;gap:28px;color:#c2c9d8;font-size:14px}.nav-links a{transition:color .2s ease}.nav-links a:hover{color:var(--cyan)}.nav-links .nav-cta{border:1px solid rgba(112,242,237,.35);padding:9px 15px;border-radius:999px;color:var(--cyan)}
+    .hero{min-height:680px;min-height:min(790px,calc(100svh - 76px));display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px;padding-block:72px 82px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:12px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}h1,h2,h3,p{margin-top:0}.hero h1{max-width:680px;margin:20px 0;font-size:clamp(44px,6.5vw,78px);line-height:1.02;letter-spacing:-.065em}.gradient-text{background:linear-gradient(100deg,var(--cyan),#a7a1ff 62%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{max-width:570px;color:#b7c0d3;font-size:18px;line-height:1.8}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.btn{min-height:48px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(112,242,237,.32);border-radius:14px;color:var(--text);font-weight:700;font-size:14px;transition:transform .2s ease,border-color .2s ease,background .2s ease}.btn:hover{transform:translateY(-2px);border-color:var(--cyan);background:rgba(112,242,237,.08)}.btn-primary{color:#071316;background:linear-gradient(110deg,var(--cyan),#9ee8ff);border-color:transparent}.btn-primary:hover{color:#071316;background:linear-gradient(110deg,#a3fff4,#bbdfff)}.btn-arrow{font-size:18px;line-height:1}.hero-card{position:relative;isolation:isolate;min-height:390px;padding:30px;border:1px solid rgba(187,207,255,.18);border-radius:28px;background:linear-gradient(145deg,rgba(25,35,57,.93),rgba(13,18,33,.94));box-shadow:0 30px 100px rgba(0,0,0,.32);overflow:hidden}.hero-card:before{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-110px;border-radius:50%;background:rgba(112,242,237,.13);filter:blur(18px);z-index:-1}.card-top{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#aab4ca;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.live-tag{padding:6px 10px;border-radius:99px;background:rgba(112,242,237,.1);color:var(--cyan);letter-spacing:.06em}.app-icon{width:78px;height:78px;display:grid;place-items:center;margin:56px 0 20px;border-radius:23px;background:linear-gradient(140deg,#5de4e1,#8c83ff 70%,#d58cff);color:#091019;font-weight:900;font-size:23px;box-shadow:0 12px 38px rgba(112,242,237,.16)}.hero-card h2{margin:0 0 8px;font-size:30px;letter-spacing:-.04em}.hero-card p{max-width:390px;color:var(--muted);margin-bottom:24px}.card-link{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:14px;font-weight:750}.card-link:hover{color:#fff}.card-footer{position:absolute;left:30px;right:30px;bottom:25px;border-top:1px solid var(--line);padding-top:17px;display:flex;justify-content:space-between;color:#8e9ab0;font-size:12px}
+    .proof-row{border-block:1px solid var(--line);background:rgba(255,255,255,.018)}.proof-inner{display:grid;grid-template-columns:repeat(3,1fr);padding-block:24px}.proof-item{text-align:center;padding:8px 16px}.proof-item+.proof-item{border-left:1px solid var(--line)}.proof-number{display:block;font-size:27px;font-weight:800;letter-spacing:-.04em;color:var(--text)}.proof-label{color:var(--muted);font-size:12px;letter-spacing:.03em}
+    section.content-section{padding-block:108px}.section-head{max-width:690px;margin:0 auto 44px;text-align:center}.section-kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.section-head h2{margin:10px 0 12px;font-size:clamp(31px,4.5vw,46px);letter-spacing:-.05em;line-height:1.1}.section-head p{margin:0;color:var(--muted)}.about-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:stretch}.about-copy,.stack-panel,.project-card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(22,30,48,.88),rgba(13,18,32,.9));padding:28px}.about-copy h3,.stack-panel h3{font-size:21px;letter-spacing:-.03em;margin-bottom:12px}.about-copy p{color:var(--muted);margin-bottom:0;line-height:1.8}.stack-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.stack-list span{border:1px solid rgba(150,170,215,.18);border-radius:999px;background:rgba(255,255,255,.035);padding:8px 12px;color:#d4daea;font-size:12px}.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project-card{min-height:285px;display:flex;flex-direction:column;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}.project-card:hover{transform:translateY(-5px);border-color:rgba(112,242,237,.38);box-shadow:0 18px 50px rgba(0,0,0,.2)}.project-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}.project-icon{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:rgba(112,242,237,.1);font-size:22px}.status{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);background:rgba(112,242,237,.08);padding:6px 9px;border-radius:99px}.status.building{color:#ffc879;background:rgba(255,191,95,.09)}.status.upcoming{color:#d6a6ff;background:rgba(180,132,255,.1)}.project-card h3{font-size:21px;margin-bottom:8px;letter-spacing:-.03em}.project-card p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:20px}.project-card .card-link{margin-top:auto}.contact-panel{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:34px;border:1px solid rgba(112,242,237,.2);border-radius:24px;background:radial-gradient(ellipse at 8% 20%,rgba(112,242,237,.1),transparent 42%),linear-gradient(130deg,rgba(23,31,50,.94),rgba(13,18,32,.94))}.contact-panel h2{font-size:clamp(25px,4vw,36px);letter-spacing:-.05em;margin:0 0 8px}.contact-panel p{margin:0;color:var(--muted)}footer{margin-top:80px;border-top:1px solid var(--line);padding:28px 0;color:#8894aa;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center}.footer-brand{color:#dfe5f2;font-weight:750;letter-spacing:.08em}
+     .brand-mark{animation:brandGlow 3s ease-in-out infinite alternate}
+     .eyebrow:before{animation:signalPulse 1.8s ease-in-out infinite}
+     .gradient-text{background-size:180% 100%;animation:gradientFlow 6s ease-in-out infinite alternate}
+     .hero-card{animation:cardFloat 6s ease-in-out infinite}
+     .hero-card:after{content:"";position:absolute;inset:-80% auto -80% -40%;width:28%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.09),transparent);pointer-events:none;transition:left .7s ease}
+     .hero-card:hover:after{left:120%}
+     .btn .btn-arrow,.card-link span{transition:transform .2s ease}
+     .btn:hover .btn-arrow,.card-link:hover span{transform:translate(3px,-2px)}
+     .motion-ready [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+     .motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+     @keyframes brandGlow{from{box-shadow:0 0 16px rgba(112,242,237,.12)}to{box-shadow:0 0 32px rgba(112,242,237,.42)}}
+     @keyframes signalPulse{0%,100%{box-shadow:0 0 5px var(--cyan);transform:scale(.9)}50%{box-shadow:0 0 16px var(--cyan);transform:scale(1.2)}}
+     @keyframes gradientFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
+     @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+     a:focus-visible{outline:3px solid var(--cyan);outline-offset:4px;border-radius:5px}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;min-height:auto;padding-block:90px}.hero-copy{max-width:650px}.hero-card{min-height:350px}.app-icon{margin-top:38px}.about-panel{grid-template-columns:1fr}.projects-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.wrap{width:min(var(--max),calc(100% - 32px))}.nav{min-height:68px;gap:12px}.brand-mark{width:34px;height:34px}.brand-name{font-size:12px}.nav-links{gap:12px;font-size:12px}.nav-links .nav-cta{padding:7px 10px}.nav-links a:nth-child(1){display:none}.hero{padding-block:75px 62px}.hero h1{font-size:clamp(42px,12vw,62px)}.hero-copy{font-size:16px}.hero-card{min-height:340px;padding:23px}.card-footer{left:23px;right:23px}.proof-inner{padding-block:17px}.proof-item{padding:6px}.proof-number{font-size:23px}.proof-label{font-size:10px}.content-section{padding-block:76px!important}.section-head{margin-bottom:30px}.projects-grid{grid-template-columns:1fr}.project-card{min-height:245px}.contact-panel{align-items:flex-start;flex-direction:column;padding:25px}.footer-inner{align-items:flex-start;flex-direction:column}}
+     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.motion-ready [data-reveal]{opacity:1;transform:none}}
+  </style>
 </head>
-
 <body>
-
-<div class="bg">
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-<div class="circle c3"></div>
-</div>
-
-<nav>
-<div class="logo">M R X</div>
-<div>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<h1>M R X Technologies</h1>
-<p>Building high-performance Android apps, modern web utilities, and seamless user experiences.</p>
-<button class="btn" onclick="scrollToSection('projects')">Explore Projects</button>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<h2 class="title">👨‍💻 About Developer</h2>
-<p class="about">
-Dedicated Android application developer specializing in Kotlin, MVVM architecture, and WebView optimizations. 
-Focused on crafting custom utility tools, educational apps, and innovative browsing solutions with clean UI design.
-</p>
-</section>
-
-<!-- SKILLS -->
-<section>
-<h2 class="title">🛠 Tech Stack</h2>
-<p class="tagline">Core technologies powering modern application development</p>
-
-<div class="skills">
-<div class="skill">Android Studio</div>
-<div class="skill">Kotlin</div>
-<div class="skill">Java</div>
-<div class="skill">MVVM Architecture</div>
-<div class="skill">WebView & WebKit</div>
-<div class="skill">Firebase</div>
-<div class="skill">Google AdMob</div>
-<div class="skill">HTML / CSS / JS</div>
-</div>
-</section>
-
-<!-- WHAT I BUILD -->
-<section>
-<h2 class="title">🚀 What I Build</h2>
-<p class="tagline">Engineering robust solutions for mobile and web ecosystems</p>
-
-<div class="cards">
-<div class="card">
-<h3>📱 Lightweight Browsers</h3>
-<p>Custom secure browser engines built with advanced WebView features and smart assistant tools.</p>
-</div>
-<div class="card">
-<h3>⚡ Native Android Apps</h3>
-<p>Optimized mobile applications utilizing modern architecture components and responsive layouts.</p>
-</div>
-<div class="card">
-<h3>📚 Interactive Platforms</h3>
-<p>Dynamic educational utilities and rich media handling interfaces built for seamless engagement.</p>
-</div>
-</div>
-</section>
-
-<!-- STATS -->
-<section>
-<h2 class="title">📊 Highlights</h2>
-<p class="tagline">Key project milestones and deployment records</p>
-
-<div class="stats">
-<div class="stat"><h2 id="a1">0</h2><p>Published & Active Apps</p></div>
-<div class="stat"><h2 id="a2">0</h2><p>Core Modules & Features</p></div>
-<div class="stat"><h2 id="a3">0</h2><p>Major App Updates</p></div>
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-<h2 class="title">🚀 Featured Projects</h2>
-<p class="tagline">Explore live products and upcoming innovations</p>
-
-<div class="cards">
-
-<div class="card">
-<div class="badge dev">Active Dev</div>
-<h3>MRX Browser</h3>
-<p>A fast, lightweight Android browser built with Kotlin/MVVM and custom WebView integration featuring smart tools.</p>
-</div>
-
-<div class="card">
-<div class="badge">Live</div>
-<h3>MRX Quize</h3>
-<p>Feature-rich educational trivia application with multiplayer battles, NCERT content, and streak rewards.</p>
-<button class="btn" style="margin-top:10px; padding:8px 20px; font-size:14px;" onclick="alert('MRX Quize is live on Play Console!')">View App</button>
-</div>
-
-<div class="card">
-<div class="badge future">Upcoming</div>
-<h3>English Grammar</h3>
-<p>Comprehensive English learning tool featuring structured tenses, rapid practice tests, and daily streak tracking.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2 class="title">📞 Get In Touch</h2>
-<p class="tagline">Let’s collaborate or build something extraordinary together</p>
-
-<a href="https://mail.google.com/mail/?view=cm&to=mrxofficial000000@email.com" class="btn">
-    Send Email
-</a>
-</section>
-
-<footer>
-© 2026 M R X Technologies. All rights reserved.
-</footer>
-
-<script>
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-function counter(id,end){
-let i=0,el=document.getElementById(id);
-let int=setInterval(()=>{
-i++;el.innerText=i+"+";
-if(i>=end) clearInterval(int);
-},50);
-}
-
-window.onload=()=>{
-counter("a1",3);
-counter("a2",30);
-counter("a3",12);
-}
-</script>
-
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="./index.html" aria-label="MRX Technologies home"><span class="brand-mark">MRX</span><span class="brand-name">MRX <span>TECHNOLOGIES</span></span></a>
+      <div class="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact" class="nav-cta">Contact</a></div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Android · Web · Product</span>
+        <h1 id="hero-title">Apps and digital experiences <span class="gradient-text">built to feel effortless.</span></h1>
+        <p class="hero-copy">MRX Technologies creates Android apps, modern web utilities, and smooth digital experiences—with a focus on useful features and clean design.</p>
+        <div class="actions"><a class="btn btn-primary" href="#projects">Explore projects <span class="btn-arrow" aria-hidden="true">↘</span></a><a class="btn" href="https://mrxtechnologies.github.io/mrx_quize.html">Open MRX Quize <span class="btn-arrow" aria-hidden="true">↗</span></a></div>
+      </div>
+      <a class="hero-card" href="https://mrxtechnologies.github.io/mrx_quize.html" aria-label="Open the MRX Quize project page">
+        <div class="card-top"><span>Featured project</span><span class="live-tag">● Live</span></div>
+        <div class="app-icon" aria-hidden="true">QZ</div>
+        <h2>MRX Quize</h2>
+        <p>A quiz app for an engaging learning experience, with Hindi and English support and subject-wise practice.</p>
+        <span class="card-link">Explore the app <span aria-hidden="true">→</span></span>
+        <div class="card-footer"><span>Android app</span><span>MRX Technologies</span></div>
+      </a>
+    </section>
+    <div class="proof-row" aria-label="Project highlights"><div class="proof-inner wrap"><div class="proof-item"><span class="proof-number">3+</span><span class="proof-label">Published & active apps</span></div><div class="proof-item"><span class="proof-number">13+</span><span class="proof-label">Core modules & features</span></div><div class="proof-item"><span class="proof-number">12+</span><span class="proof-label">Major app updates</span></div></div></div>
+    <section class="content-section wrap" id="about">
+      <div class="section-head"><span class="section-kicker">About</span><h2>Thoughtful software, made for everyday use.</h2><p>Focused on useful products across Android and the web.</p></div>
+      <div class="about-panel"><article class="about-copy"><h3>About the developer</h3><p>Android application developer specializing in Kotlin, MVVM architecture, and WebView optimizations. Building utility tools, educational apps, and clean user experiences.</p></article><div class="stack-panel"><h3>Tech stack</h3><p style="color:var(--muted);margin-bottom:0">Tools and technologies used across current projects.</p><div class="stack-list"><span>Android Studio</span><span>Kotlin</span><span>Java</span><span>MVVM</span><span>WebView</span><span>Firebase</span><span>Google AdMob</span><span>HTML · CSS · JS</span></div></div></div>
+    </section>
+    <section class="content-section wrap" id="projects">
+      <div class="section-head"><span class="section-kicker">Selected work</span><h2>Projects made to be useful.</h2><p>Explore live products and what’s currently in development.</p></div>
+      <div class="projects-grid">
+        <article class="project-card"><div class="project-head"><span class="project-icon" aria-hidden="true">◉</span><span class="status building">In development</span></div><h3>MRX Browser</h3><p>A lightweight Android browser built with Kotlin, MVVM, and WebView features.</p><span class="card-link" style="color:#9aa6bb">More details coming soon</span></article>
+        <a class="project-card" href="https://mrxtechnologies.github.io/mrx_quize.html" aria-label="Open MRX Quize details"><div class="project-head"><span class="project-icon" aria-hidden="true">✦</span><span class="status">Live</span></div><h3>MRX Quize</h3><p>Educational quizzes with Hindi and English support, subject-wise practice, and a smooth interface.</p><span class="card-link">View project <span aria-hidden="true">→</span></span></a>
+        <article class="project-card"><div class="project-head"><span class="project-icon" aria-hidden="true">Aa</span><span class="status upcoming">Upcoming</span></div><h3>English Grammar</h3><p>An English learning tool planned around tenses, practice tests, and daily learning streaks.</p><span class="card-link" style="color:#9aa6bb">Coming soon</span></article>
+      </div>
+    </section>
+    <section class="content-section wrap" id="contact"><div class="contact-panel"><div><span class="section-kicker">Get in touch</span><h2>Have a project in mind?</h2><p>Open to collaboration and building useful digital products.</p></div><a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;to=mrxofficial000000@email.com" target="_blank" rel="noopener noreferrer">Send an email <span class="btn-arrow" aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer><div class="footer-inner wrap"><span class="footer-brand">MRX TECHNOLOGIES</span><span>© 2026 MRX Technologies. All rights reserved.</span></div></footer>
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("motion-ready");
+      const revealItems = document.querySelectorAll(".hero > *, .proof-item, .section-head, .about-panel > *, .project-card, .contact-panel");
+      revealItems.forEach((item, index) => {
+        item.dataset.reveal = "";
+        item.style.setProperty("--reveal-delay", `${(index % 3) * 100}ms`);
+      });
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -35px 0px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+  </script>
 </body>
 </html>
